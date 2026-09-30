@@ -38,17 +38,12 @@ type Tool = {
 }
 
 export const tools: Tool[] = [
-  { name: 'Claude Code',          iconPath: '/icons/claude-code-logo.png' },
-  { name: 'Codex',                iconPath: '/icons/codex.svg',           color: '#000000' },
-  { name: 'Cursor',               iconPath: '/icons/cursor.svg',          color: '#0F172A' },
-  { name: 'Hermes AI',            iconPath: '/icons/nousresearch.svg',    color: '#18181B' },
-  { name: 'VS Code',              iconPath: '/icons/vscode.svg' },
   { name: 'GoHighLevel',          iconPath: '/icons/gohighlevel.png' },
-  { name: 'Lightspeed X-Series',  iconPath: '/icons/lightspeed.png' },
   { name: 'Google Workspace',     iconPath: '/icons/googleworkspace.svg' },
-  { name: 'Zendesk',              iconPath: '/icons/zendesk.svg',         color: '#03363D' },
-  { name: 'Intercom',             iconPath: '/icons/intercom.svg',        color: '#1F8DED' },
   { name: 'Slack',                iconPath: '/icons/slack.svg',           color: '#611F69' },
+  { name: 'Meta',                 iconPath: '/icons/facebook.svg',        color: '#0866FF' },
+  { name: 'Codex',                iconPath: '/icons/codex.svg',           color: '#221F1A' },
+  { name: 'Claude Code',          iconPath: '/icons/claude-code-logo.png' },
 ]
 
 export default function ToolsMarquee() {
@@ -57,7 +52,7 @@ export default function ToolsMarquee() {
   const doubled = useMemo(() => [...tools, ...tools], [])
 
   return (
-    <section className="tools-marquee" aria-label="Tools I work with" data-reveal>
+    <section className="tools-marquee" aria-label="Tools I work with">
       <div className="tools-marquee__track" aria-hidden="true">
         {doubled.map((tool, i) => {
           const useMask = tool.iconPath.endsWith('.svg') && !!tool.color

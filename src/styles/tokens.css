@@ -1,14 +1,14 @@
 :root {
   /* Brand palette */
-  --navy:       #0B1E3F;   /* primary text, card surface, dark accents */
-  --navy-ink:   #060C1A;   /* matches shader dark base for .dark-section */
-  --cream:      #F4F4ED;   /* matches shader light base, page bg */
-  --white:      #FFFFFF;
-  --orange:     #FF7A1A;   /* CTA, accent bar, active dot */
-  --orange-hover: #FFA155; /* CTA hover state */
-  --orange-ink: #B4490A;   /* accessible orange TEXT on light bg - 4.88:1 on cream, 5.39:1 on white (WCAG AA) */
-  --muted:      #5A6479;
-  --divider:    rgba(11, 30, 63, 0.12);
+  --navy:       #221F1A;
+  --navy-ink:   #0E0E0B;
+  --cream:      #F8F6F2;
+  --white:      #F1EEE9;
+  --orange:     #96532C;
+  --orange-hover: #834521;
+  --orange-ink: #834521;
+  --muted:      #69635A;
+  --divider:    rgba(34, 31, 26, 0.16);
   --success:    #2E9E6B;   /* form status ok - clears 4.5:1 on navy-ink */
   --error:      #D9544F;   /* form status error - clears 4.5:1 on navy-ink */
 
@@ -34,7 +34,7 @@
   /* Layout */
   --container-x: clamp(24px, 6vw, 96px);
   --section-pad-y: clamp(110px, 13vh, 170px);
-  --radius-card: 24px;
+  --radius-card: 2px;
   --radius-pill: 999px;
   --radius-circle: 50%;
 
@@ -71,27 +71,27 @@
 
   /* Surfaces. These are the tokens that had to exist for the theme to flip
      without rewriting the section stylesheets. */
-  --paper:      #FBFBF7;   /* raised card on cream */
-  --line:       rgba(11, 30, 63, 0.14);
-  --line-strong:rgba(11, 30, 63, 0.28);
-  --tint:       rgba(11, 30, 63, 0.05);
-  --tint-strong:rgba(11, 30, 63, 0.09);
-  --glass:      rgba(251, 251, 247, 0.72);
+  --paper:      #F8F6F2;
+  --line:       rgba(34, 31, 26, 0.16);
+  --line-strong:rgba(34, 31, 26, 0.34);
+  --tint:       rgba(34, 31, 26, 0.04);
+  --tint-strong:rgba(34, 31, 26, 0.08);
+  --glass:      rgba(248, 246, 242, 0.88);
   /* A plate that stays light in BOTH themes. Brand marks are external
      identifiers and need a constant backdrop to read against. */
-  --plate:      #F4F4ED;
+  --plate:      #F8F6F2;
   /* The opaque fill for sections that were written as white-on-navy back when
      the shader inverted on scroll. It no longer does, so they carry their own
      ground. Same navy in both themes: their type is light either way. */
-  --panel-dark: #060C1A;
+  --panel-dark: #0E0E0B;
 
   /* Verified badge - Facebook blue, not the site accent. It is a platform
      signal, not brand furniture, so it does not follow --orange. */
-  --verified:   #0866FF;
+  --verified:   #96532C;
 
   /* Ink for anything sitting on --plate. Both are constant across themes:
      a brand mark on a light plate must not invert with the page. */
-  --plate-ink:  #0B1E3F;
+  --plate-ink:  #221F1A;
 }
 
 @media (min-width: 1100px) {
@@ -103,20 +103,22 @@
    --cream (page), --navy (ink), --white (card surface) and flips with it.
    Orange stays the single accent in both modes. */
 [data-theme='dark'] {
-  --cream:        #070B14;
-  --paper:        #0B1120;
-  --white:        #0E1626;
-  --navy:         #EDF0F6;
-  --navy-ink:     #04070F;
-  --muted:        rgba(237, 240, 246, 0.60);
+  --cream:        #0E0E0B;
+  --paper:        #161511;
+  --white:        #1B1915;
+  --navy:         #E9E4D8;
+  --navy-ink:     #0E0E0B;
+  --muted:        #ABA398;
   --divider:      rgba(255, 255, 255, 0.10);
   --line:         rgba(255, 255, 255, 0.09);
   --line-strong:  rgba(255, 255, 255, 0.20);
   --tint:         rgba(255, 255, 255, 0.05);
   --tint-strong:  rgba(255, 255, 255, 0.09);
   --glass:        rgba(14, 22, 38, 0.72);
-  --orange-ink:   #FF9A4D;
-  --panel-dark:   #0B1120;
+  --orange:       #CA9268;
+  --orange-hover: #D6A781;
+  --orange-ink:   #CA9268;
+  --panel-dark:   #0E0E0B;
   --brands-chip-bg:     #F4F4ED;
   --brands-chip-border: rgba(255, 255, 255, 0.14);
   --shadow-soft:  0 20px 60px -20px rgba(0, 0, 0, 0.75);

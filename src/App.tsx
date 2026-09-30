@@ -3,8 +3,6 @@ import { Outlet, useLocation } from 'react-router-dom'
 import TabBar from '@/components/TabBar'
 import QuickMenu from '@/components/QuickMenu'
 import Rail from '@/components/Rail'
-import IntroOverlay from '@/components/IntroOverlay'
-import CursorRing from '@/components/CursorRing'
 import AccessMenu from '@/components/AccessMenu'
 import { motionReduced } from '@/lib/a11y'
 import { useLenis, SCROLLER_ID } from '@/hooks/useLenis'
@@ -31,8 +29,6 @@ export default function App() {
   useLenis()
 
   const { pathname } = useLocation()
-  const FIXED_ROUTES = ['/', '/projects', '/testimonials', '/about', '/contact']
-  const isFixed = FIXED_ROUTES.includes(pathname)
   // Below the shell breakpoint the rail is gone: a bottom tab bar navigates,
   // the QuickMenu (theme + accessibility) floats top-right on every page but
   // Home (whose profile header carries it), and the visits widget folds into
@@ -94,8 +90,6 @@ export default function App() {
 
   return (
     <>
-      <IntroOverlay />
-      <CursorRing />
       <a href={`#${SCROLLER_ID}`} className="skip-link">Skip to main content</a>
       {shouldLoadCanvas && perfTier !== 'low' && (
         <Suspense fallback={null}>
@@ -109,11 +103,17 @@ export default function App() {
           ref={panelRef}
           id={SCROLLER_ID}
           className="shell__panel"
-          data-fixed={isFixed ? 'true' : 'false'}
+          data-fixed="false"
         >
           <Suspense fallback={null}>
             <Outlet />
           </Suspense>
+          <footer className="profile-footer">
+            <span>© {new Date().getFullYear()} Jason Almine</span>
+            <a href="https://www.jasonalmine.com/">Main portfolio</a>
+            <a href="https://www.jasonalmine.com/privacy-policy">Privacy</a>
+            <a href="https://www.jasonalmine.com/terms-of-service">Terms</a>
+          </footer>
         </main>
       </div>
       {phone && <TabBar />}

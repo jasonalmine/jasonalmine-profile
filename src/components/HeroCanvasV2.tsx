@@ -113,10 +113,10 @@ const frag = `
     float line    = 1.0 - smoothstep(0.0, w, dist);
 
     // Theme colors (kept identical to v1 so the rest of the page does not shift).
-    vec3 bgLight   = vec3(0.957, 0.957, 0.929); // #F4F4ED cream
-    vec3 lineLight = vec3(0.46,  0.46,  0.46);  // soft neutral gray contour on cream
-    vec3 bgDark    = vec3(0.024, 0.047, 0.102); // #060C1A navy ink
-    vec3 lineDark  = vec3(1.0,   1.0,   1.0);   // solid white on navy (black would be invisible)
+    vec3 bgLight   = vec3(0.973, 0.965, 0.949); // daylight paper
+    vec3 lineLight = vec3(0.43,  0.39,  0.35);  // pencil gray contour
+    vec3 bgDark    = vec3(0.055, 0.055, 0.043); // lamp black
+    vec3 lineDark  = vec3(0.79,  0.57,  0.41);  // night ochre contour
 
     vec3 bg      = mix(bgLight, bgDark, uDarkMix);
     vec3 lineCol = mix(lineLight, lineDark, uDarkMix);
@@ -205,7 +205,7 @@ export default function HeroCanvasV2() {
     const mesh = new THREE.Mesh(geo, mat)
     scene.add(mesh)
 
-    let tgt = { x: 0, y: 0 }, cur = { x: 0, y: 0 }
+    const tgt = { x: 0, y: 0 }, cur = { x: 0, y: 0 }
     const onMove = (e: MouseEvent) => {
       tgt.x = (e.clientX / window.innerWidth) * 2 - 1
       tgt.y = -(e.clientY / window.innerHeight) * 2 + 1
