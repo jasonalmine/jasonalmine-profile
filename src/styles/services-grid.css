@@ -27,10 +27,10 @@
   /* Light plate by default; the dark theme re-pins every token below. */
   --ink: var(--navy);
   --ink-muted: var(--muted);
-  --ink-line: rgba(11, 30, 63, 0.10);
-  --ink-plate: rgba(11, 30, 63, 0.035);
-  --ink-chip: rgba(11, 30, 63, 0.05);
-  --ink-ghost: rgba(11, 30, 63, 0.06);
+  --ink-line: rgba(34, 31, 26, 0.10);
+  --ink-plate: rgba(34, 31, 26, 0.035);
+  --ink-chip: rgba(34, 31, 26, 0.05);
+  --ink-ghost: rgba(34, 31, 26, 0.06);
   --ink-eyebrow: var(--orange-ink);
   position: relative;
   display: grid;
@@ -46,11 +46,11 @@
   box-shadow:
     inset 0 0 0 1px var(--line),
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 30px 60px -40px rgba(6, 12, 26, 0.35);
+    0 30px 60px -40px rgba(14, 14, 11, 0.35);
   overflow: hidden;
 }
 [data-theme='dark'] .sgrid__method {
-  --ink: #EDF0F6;
+  --ink: #E9E4D8;
   --ink-muted: rgba(237, 240, 246, 0.62);
   --ink-line: rgba(255, 255, 255, 0.10);
   --ink-plate: rgba(255, 255, 255, 0.045);
@@ -64,7 +64,7 @@
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 30px 60px -40px rgba(6, 12, 26, 0.9);
+    0 30px 60px -40px rgba(14, 14, 11, 0.9);
 }
 .sgrid__method-copy {
   display: flex;

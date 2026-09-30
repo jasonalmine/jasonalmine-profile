@@ -1,8 +1,8 @@
 # Jason Almine Profile
 
-A separate, template-based profile for Jason Almine at `profile.jasonalmine.com`. The main portfolio at `jasonalmine.com` remains a separate site.
+A separate colorway of [portfolio-template](https://github.com/jasonalmine/portfolio-template), assigned to `profile.jasonalmine.com`. The main portfolio at `jasonalmine.com` remains a separate site.
 
-The site uses the profile rail, contour background, bento home, and phone navigation from [portfolio-template](https://github.com/jasonalmine/portfolio-template). Its content and visual system are tailored to Jason's Operator and Builder portfolio. The full case studies and booking page link to the main portfolio.
+The template's layout, navigation, and placeholder copy are retained. The warm light and dark palettes follow Jason's Operator's Notebook colors. Search indexing is disabled while placeholder content remains.
 
 ## Run locally
 
@@ -16,12 +16,12 @@ npm run lint
 ## Update content
 
 - Identity and contact details: `src/data/profile.ts`
-- Selected work: `featuredWork` in `src/data/projects.ts`
-- Home, services, about, and contact copy: `src/components/Home.tsx`, `src/views/ServicesView.tsx`, `src/components/AboutGrid.tsx`, and `src/components/ContactGrid.tsx`
-- Visual system: `src/styles/tokens.css` and `src/styles/profile.css`
+- Home bento content: `src/components/HomeBento.tsx`
+- Projects, services, about, and contact content: their existing files in `src/components/` and `src/views/`
+- Color system: `src/styles/tokens.css`, `src/styles/home.css`, and `src/components/HeroCanvasV2.tsx`
 - Search and sharing metadata: `index.html`
 
-The 4 work links point to `/work#<slug>` on the main portfolio. Update the matching case study there before changing a claim here.
+Replace placeholder copy and review claims before enabling search indexing.
 
 ## Deployment
 

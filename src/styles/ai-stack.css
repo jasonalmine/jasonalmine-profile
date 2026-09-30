@@ -16,7 +16,7 @@
 
 .ai-stack {
   --ai-stack-indent: 30px;
-  --ai-stack-wire: rgba(11, 30, 63, 0.26);
+  --ai-stack-wire: rgba(34, 31, 26, 0.26);
 
   position: relative;
   margin-bottom: clamp(52px, 6vw, 84px);
@@ -133,10 +133,10 @@
   align-items: flex-start;
   gap: 7px;
   padding: 15px 17px;
-  border: 1px solid rgba(11, 30, 63, 0.09);
+  border: 1px solid rgba(34, 31, 26, 0.09);
   border-radius: 16px;
   background: var(--white);
-  box-shadow: 0 10px 28px -20px rgba(11, 30, 63, 0.3);
+  box-shadow: 0 10px 28px -20px rgba(34, 31, 26, 0.3);
   cursor: default;
   transition:
     transform var(--dur-med) var(--ease-out),
@@ -173,7 +173,7 @@
 .ai-stack__node--leaf {
   padding: 12px 14px;
   border-radius: 13px;
-  border-color: rgba(11, 30, 63, 0.07);
+  border-color: rgba(34, 31, 26, 0.07);
   background: rgba(255, 255, 255, 0.68);
   box-shadow: none;
 }
@@ -183,7 +183,7 @@
 .ai-stack__node.is-lit {
   border-color: rgba(255, 122, 26, 0.45);
   box-shadow:
-    0 18px 44px -24px rgba(11, 30, 63, 0.32),
+    0 18px 44px -24px rgba(34, 31, 26, 0.32),
     0 0 0 1px rgba(255, 122, 26, 0.22);
 }
 
@@ -225,7 +225,7 @@
   width: 22px;
   height: 22px;
   border-radius: 7px;
-  background: rgba(11, 30, 63, 0.06);
+  background: rgba(34, 31, 26, 0.06);
   color: var(--navy);
 }
 
@@ -332,12 +332,12 @@
 
 .ai-stack__status--internal {
   color: var(--muted);
-  background: rgba(11, 30, 63, 0.07);
+  background: rgba(34, 31, 26, 0.07);
 }
 
 .ai-stack__status--beta {
   color: var(--muted);
-  border-color: rgba(11, 30, 63, 0.22);
+  border-color: rgba(34, 31, 26, 0.22);
   border-style: dashed;
 }
 
@@ -387,7 +387,7 @@
 /* Replaces the tap highlight killed above. Instant and untransitioned - press
    feedback that arrives a frame late is worse than none, and the caret is
    already carrying the state change. */
-.ai-stack__toggle:active { background: rgba(11, 30, 63, 0.035); }
+.ai-stack__toggle:active { background: rgba(34, 31, 26, 0.035); }
 
 /* Same tinted square as the mark tile on the other side of the card, so the
    affordance reads as part of the card's own furniture rather than a widget
@@ -400,7 +400,7 @@
   width: 22px;
   height: 22px;
   border-radius: 7px;
-  background: rgba(11, 30, 63, 0.06);
+  background: rgba(34, 31, 26, 0.06);
   color: var(--navy);
   transition:
     transform var(--dur-med) var(--ease-out),

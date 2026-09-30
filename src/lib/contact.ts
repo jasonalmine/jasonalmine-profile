@@ -24,7 +24,6 @@ export const MAX_MESSAGE = 5000
 // Built from \u escapes so the source stays pure ASCII.
 // Control chars U+0000-U+001F and U+007F; when newlines are allowed, tab,
 // LF and CR survive. Zero-width and bidi marks always go.
-// The control ranges are intentional input sanitation rules.
 // eslint-disable-next-line no-control-regex
 const CTRL_NO_NL = new RegExp('[\\u0000-\\u001F\\u007F]', 'g')
 // eslint-disable-next-line no-control-regex

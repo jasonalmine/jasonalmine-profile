@@ -1,61 +1,83 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from '@/components/slab'
 import { profile } from '@/data/profile'
-import { featuredWork } from '@/data/projects'
 import ToolsMarquee from './ToolsMarquee'
-import { HomeProfile } from './HomeMobile'
+import HomeBento from './HomeBento'
+import { HomeProfile, HomeStats, HomeExplore } from './HomeMobile'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { useIsPhone } from '@/hooks/useMediaQuery'
 
+/**
+ * Home. One viewport, three bands, no scroll:
+ *
+ *   head       the display line the intro writes, then the lede
+ *   tools      "Tools I work with" beside the marquee, on its own plate
+ *   showcase   the bento - one card per view, see HomeBento - on its own
+ *
+ * The grid is `auto auto 1fr` so the showcase absorbs the slack instead of
+ * pushing the panel into a scrollbar. Every other view scrolls; this one is
+ * laid out to the box.
+ *
+ * On a phone the page becomes an app screen: a profile header where the rail
+ * used to be, the proof stats under the lede, and the bento replaced by a
+ * snap row of tiles (HomeMobile). The CTA leaves the head - the tab bar's
+ * Contact action carries it on every screen.
+ *
+ * `.home__title` is also the intro's landing target: IntroOverlay measures it
+ * and flies its copy into this exact rect, so the line the visitor watched
+ * being written is the line that stays on the page.
+ */
 export default function Home() {
+  useScrollReveal()
+  const phone = useIsPhone()
+  const { displayName, hero } = profile
+
   return (
-    <section className="profile-page profile-home" aria-labelledby="home-title">
-      <div className="profile-home__mobile"><HomeProfile /></div>
-      <div className="profile-home__intro">
-        <p className="profile-kicker">Jason Almine / Operator & Builder</p>
-        <h1 id="home-title" className="profile-display">
-          I build the systems<br />{' '}behind the work<span className="profile-period">.</span>
-        </h1>
-        <div className="profile-home__lede-row">
-          <p>{profile.hero.body}</p>
-          <Link to="/contact" className="profile-link">Start a conversation <ArrowUpRight size={18} /></Link>
+    <section className="home" aria-labelledby="home-title">
+      {phone && <HomeProfile />}
+
+      <div className="home__head">
+        <div className="home__headline">
+          <h1 className="home__title" id="home-title">
+            <span className="home__line">
+              {displayName.line1} {displayName.line2}
+            </span>
+          </h1>
+
+          {!phone && (
+            <Link className="home__cta" to="/contact">
+              Get in touch
+              <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
+            </Link>
+          )}
         </div>
+
+        <p className="home__lede">{hero.body}</p>
+        {phone && <HomeStats />}
       </div>
 
-      <div className="profile-toolband">
-        <div className="profile-toolband__label">
-          <span className="profile-kicker">The working stack</span>
-          <strong>Tools I use</strong>
-        </div>
-        <ToolsMarquee />
-      </div>
-
-      <div className="profile-bento" aria-label="Explore the portfolio">
-        <Link to="/work" className="profile-bento__work">
-          <span className="profile-card-head"><span>Selected work</span><ArrowUpRight size={19} /></span>
-          <div className="profile-bento__work-copy">
-            <strong>Proof in the build.</strong>
-            <span>See the systems, screens, and outcomes.</span>
+      {/* Two plates, not one. The tools band and the bento are different
+          objects - a strip you read across and a grid you pick from - and one
+          shared sheet made the strip look like the bento's header. */}
+      <div className="home__glass home__glass--tools">
+        <div className="home__tools">
+          <div className="home__tools-head">
+            <span className="home__tools-eyebrow">Daily drivers</span>
+            <h2 className="home__tools-label">Tools I work with</h2>
           </div>
-          <img src={featuredWork[2].image} alt={featuredWork[2].alt} />
-        </Link>
-        <Link to="/about" className="profile-bento__about">
-          <span className="profile-card-head"><span>About Jason</span><ArrowUpRight size={19} /></span>
-          <strong>I run what I build.</strong>
-          <p>A Cebu-based builder working where CRM, automation, and operations meet.</p>
-        </Link>
-        <Link to="/services" className="profile-bento__services">
-          <span className="profile-card-head"><span>What I do</span><ArrowUpRight size={19} /></span>
-          <ul>
-            <li>CRM architecture <span>01</span></li>
-            <li>Automation <span>02</span></li>
-            <li>Reporting <span>03</span></li>
-          </ul>
-        </Link>
-        <Link to="/contact" className="profile-bento__contact">
-          <span className="profile-card-head"><span>Next step</span><ArrowUpRight size={19} /></span>
-          <strong>Tell me where the handoff breaks.</strong>
-          <span className="profile-link">Book a 30-minute call <ArrowUpRight size={18} /></span>
-        </Link>
+          <ToolsMarquee />
+        </div>
       </div>
+
+      {phone ? (
+        <HomeExplore />
+      ) : (
+        <div className="home__glass home__glass--showcase">
+          <div className="home__showcase">
+            <HomeBento />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

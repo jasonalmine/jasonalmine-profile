@@ -34,7 +34,7 @@
   /* Layout */
   --container-x: clamp(24px, 6vw, 96px);
   --section-pad-y: clamp(110px, 13vh, 170px);
-  --radius-card: 2px;
+  --radius-card: 24px;
   --radius-pill: 999px;
   --radius-circle: 50%;
 
