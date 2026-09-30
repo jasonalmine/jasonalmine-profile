@@ -4,7 +4,6 @@ import { useMemo } from 'react'
  * ToolsMarquee
  *
  * Horizontally scrolling strip of brand logos + labels for the tools you work with.
- * PLACEHOLDER - swap the list below for your own tools (icons live in public/icons/).
  * The strip lives on the cream shader page, NOT inside a dark section.
  *
  * Implementation notes:
@@ -39,16 +38,13 @@ type Tool = {
 
 export const tools: Tool[] = [
   { name: 'Claude Code',          iconPath: '/icons/claude-code-logo.png' },
-  { name: 'Codex',                iconPath: '/icons/codex.svg',           color: '#000000' },
-  { name: 'Cursor',               iconPath: '/icons/cursor.svg',          color: '#0F172A' },
-  { name: 'Hermes AI',            iconPath: '/icons/nousresearch.svg',    color: '#18181B' },
-  { name: 'VS Code',              iconPath: '/icons/vscode.svg' },
+  { name: 'Codex',                iconPath: '/icons/codex.svg',           color: '#221F1A' },
   { name: 'GoHighLevel',          iconPath: '/icons/gohighlevel.png' },
-  { name: 'Lightspeed X-Series',  iconPath: '/icons/lightspeed.png' },
+  { name: 'n8n',                  iconPath: '/icons/ai/n8n.svg' },
   { name: 'Google Workspace',     iconPath: '/icons/googleworkspace.svg' },
-  { name: 'Zendesk',              iconPath: '/icons/zendesk.svg',         color: '#03363D' },
-  { name: 'Intercom',             iconPath: '/icons/intercom.svg',        color: '#1F8DED' },
   { name: 'Slack',                iconPath: '/icons/slack.svg',           color: '#611F69' },
+  { name: 'Meta Ads',             iconPath: '/icons/facebook.svg',        color: '#0866FF' },
+  { name: 'React',                iconPath: '/icons/ai/react.svg' },
 ]
 
 export default function ToolsMarquee() {
@@ -57,7 +53,7 @@ export default function ToolsMarquee() {
   const doubled = useMemo(() => [...tools, ...tools], [])
 
   return (
-    <section className="tools-marquee" aria-label="Tools I work with" data-reveal>
+    <section className="tools-marquee" aria-label="Tools I work with">
       <div className="tools-marquee__track" aria-hidden="true">
         {doubled.map((tool, i) => {
           const useMask = tool.iconPath.endsWith('.svg') && !!tool.color

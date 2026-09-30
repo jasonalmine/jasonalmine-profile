@@ -9,22 +9,22 @@ export type QA = { q: string; a: string }
 export const FAQS: QA[] = [
   {
     q: 'What do you do?',
-    a: 'PLACEHOLDER - tell me what to put here: the kinds of work you take on, and who it is usually for.',
+    a: 'I build GoHighLevel CRMs, n8n automations, reporting apps, and the funnels that feed them. Most clients are service businesses that have outgrown spreadsheets and disconnected tools.',
   },
   {
-    q: 'How fast can you start?',
-    a: 'PLACEHOLDER - tell me what to put here: your usual lead time for small fixes vs. larger projects, and your working hours.',
+    q: 'How long does a build take?',
+    a: 'A focused GoHighLevel build usually takes 2 to 4 weeks. Multi-system rollouts take longer. I set a timeline after we scope the work.',
   },
   {
     q: 'How much do you charge?',
-    a: 'PLACEHOLDER - tell me what to put here: how you price (hourly, per project, retainer) and how a quote is put together.',
+    a: 'Project work starts around USD 2,000 and scales with scope. Ongoing ads and system tuning are quoted as a monthly retainer. I send a clear quote after a discovery call.',
   },
   {
     q: 'Where are you based?',
-    a: 'PLACEHOLDER - tell me what to put here: your location or timezone, and which client timezones you overlap with.',
+    a: 'I work from Cebu in the Philippines, UTC+8. I work asynchronously with clients across time zones and schedule calls to suit their hours.',
   },
   {
     q: 'What happens after I write?',
-    a: 'PLACEHOLDER - tell me what to put here: how fast you reply and what the next step looks like.',
+    a: 'I read the brief, ask what I need to clarify, then suggest a 30-minute discovery call when the project needs one. You speak with me from scope through delivery.',
   },
 ]

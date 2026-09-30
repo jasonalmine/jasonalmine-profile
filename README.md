@@ -1,8 +1,8 @@
 # Jason Almine Profile
 
-A separate colorway of [portfolio-template](https://github.com/jasonalmine/portfolio-template), assigned to `profile.jasonalmine.com`. The main portfolio at `jasonalmine.com` remains a separate site.
+A separate colorway of [portfolio-template](https://github.com/jasonalmine/portfolio-template), intended for `profile.jasonalmine.com`. The main portfolio at `jasonalmine.com` remains a separate site.
 
-The template's layout, navigation, and placeholder copy are retained. The warm light and dark palettes follow Jason's Operator's Notebook colors. Search indexing is disabled while placeholder content remains.
+The template's layout and navigation are retained. Its content uses Jason's published profile, case studies, and contact details. The warm light and dark palettes follow the Operator's Notebook colors. Search indexing remains disabled until the custom domain is live and verified.
 
 ## Run locally
 
@@ -21,7 +21,7 @@ npm run lint
 - Color system: `src/styles/tokens.css`, `src/styles/home.css`, and `src/components/HeroCanvasV2.tsx`
 - Search and sharing metadata: `index.html`
 
-Replace placeholder copy and review claims before enabling search indexing.
+Keep project figures aligned with the dated, scoped evidence on the main portfolio before enabling search indexing.
 
 ## Deployment
 

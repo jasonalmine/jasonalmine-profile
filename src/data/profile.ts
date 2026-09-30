@@ -2,15 +2,14 @@
  * YOUR IDENTITY - start here.
  *
  * Everything that says who you are lives in this file: name, handle, photo,
- * socials, email and the Home headline. Every value below is a PLACEHOLDER.
- * Replace the text, or hand this file to your AI assistant and tell it what
- * to put in each field.
+ * socials, email and the Home headline. Keep these details aligned with the
+ * main portfolio when contact information or role copy changes.
  *
  * Page-specific copy (projects, services, testimonials, FAQs) lives in the
  * other files in src/data/ and at the top of each view component.
  */
 
-import { Briefcase, SealCheck, Clock, type Icon } from '@/components/slab'
+import { Briefcase, FlowArrow, Clock, type Icon } from '@/components/slab'
 
 export type SocialLink = {
   label: string
@@ -46,31 +45,31 @@ export type Profile = {
 }
 
 export const profile: Profile = {
-  name: 'Your Name',
-  firstName: 'Your Name',
-  handle: '@yourhandle',
-  role: 'PLACEHOLDER - your title',
-  avatarSrc: '/avatar.svg',
-  verifiedLabel: 'PLACEHOLDER - what the tick means (e.g. a certification)',
-  email: 'you@example.com',
-  location: 'PLACEHOLDER - your city or timezone',
+  name: 'Jason Almine',
+  firstName: 'Jason',
+  handle: '@jasonalmine',
+  role: 'Operator & Builder',
+  avatarSrc: '/profile.png',
+  verifiedLabel: 'Work documented in published case studies',
+  email: 'email@jasonalmine.dev',
+  location: 'Cebu, Philippines · UTC+8',
   // Pick any icon from https://phosphoricons.com and import it above.
   stats: [
-    { value: '0 yrs', label: 'PLACEHOLDER', Icon: Briefcase },
-    { value: '#000', label: 'PLACEHOLDER', Icon: SealCheck },
-    { value: 'GMT+0', label: 'PLACEHOLDER', Icon: Clock },
+    { value: '90+', label: 'workflows built', Icon: FlowArrow },
+    { value: '6', label: 'projects in 1 BI view', Icon: Briefcase },
+    { value: 'UTC+8', label: 'based in Cebu', Icon: Clock },
   ],
   // The intro types this line, then flies it into the Home headline.
   // Keep it short: two halves, 5-8 words total.
-  displayName: { line1: 'Your headline here.', line2: 'Keep it short.' },
+  displayName: { line1: 'I build systems', line2: 'that last.' },
   hero: {
-    body: 'PLACEHOLDER - one line on what you do and who you do it for.',
-    portraitSrc: '/avatar.svg',
-    portraitAlt: 'Portrait placeholder',
+    body: 'GoHighLevel CRMs, n8n automation, and reporting for service teams.',
+    portraitSrc: '/profile.png',
+    portraitAlt: 'Portrait of Jason Almine',
   },
   socials: [
-    { label: 'Facebook profile', href: '#', iconPath: '/icons/facebook.svg' },
-    { label: 'LinkedIn profile', href: '#', iconPath: '/icons/linkedin.svg' },
-    { label: 'Discord profile', href: '#', iconPath: '/icons/discord.svg' },
+    { label: 'LinkedIn profile', href: 'https://www.linkedin.com/in/jason-almine-89784655/', iconPath: '/icons/linkedin.svg' },
+    { label: 'GitHub profile', href: 'https://github.com/jasonalmine', iconPath: '/icons/ai/github.svg' },
+    { label: 'Email Jason', href: 'mailto:email@jasonalmine.dev', iconPath: '/icons/mail.svg' },
   ],
 }

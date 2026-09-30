@@ -15,17 +15,17 @@ type Extension = {
 
 const EXTENSIONS: Extension[] = [
   {
-    name: 'Extension Name One',
-    desc: 'PLACEHOLDER - tell me what to put here: what the extension does and who uses it.',
-    imageSrc: '/placeholders/extension-1.jpg',
-    imageAlt: 'Extension one popup placeholder',
+    name: 'Billing Sync',
+    desc: 'Turns approved Asana time into validated, deduped Xero invoices.',
+    imageSrc: '/work/n8n-billing.webp',
+    imageAlt: 'n8n billing workflow in the editor',
     Icon: Key,
   },
   {
-    name: 'Extension Name Two',
-    desc: 'PLACEHOLDER - tell me what to put here: what the extension does and who uses it.',
-    imageSrc: '/placeholders/extension-2.jpg',
-    imageAlt: 'Extension two popup placeholder',
+    name: 'Enrolment CRM',
+    desc: 'Tracks a training enquiry through enrolment in 1 GoHighLevel pipeline.',
+    imageSrc: '/work/ghl-dashboard.webp',
+    imageAlt: 'GoHighLevel enrolment dashboard',
     Icon: Browser,
   },
 ]
@@ -49,7 +49,7 @@ function ExtensionCard({ ext }: { ext: Extension }) {
           </span>
           <span className="ext-card__urlbar">
             <ExtIcon size={12} weight="bold" />
-            chrome-extension
+            system-preview
           </span>
         </div>
         <div className="ext-card__stage">
@@ -65,7 +65,7 @@ function ExtensionCard({ ext }: { ext: Extension }) {
       <div className="ext-card__body">
         <span className="ext-card__badge">
           <ExtIcon size={14} weight="bold" aria-hidden="true" />
-          Chrome Extension
+          Client system
         </span>
         <h4 className="ext-card__name">{ext.name}</h4>
         <p className="ext-card__desc">{ext.desc}</p>
@@ -130,13 +130,12 @@ export function AIStackSection() {
       data-reveal
     >
       <header className="projects__header">
-        <span className="projects__eyebrow">Placeholder category</span>
+        <span className="projects__eyebrow">Built systems</span>
         <h2 className="projects__headline" id="projects-heading">
-          Your systems headline.
+          The work behind daily operations.
         </h2>
         <p className="projects__subhead">
-          PLACEHOLDER - tell me what to put here: one line on the systems below.
-          Open a branch to see what sits under it.
+          CRM, automation, reporting, and acquisition systems. Open a branch to see what sits under it.
         </p>
       </header>
       <div className="projects__panel" id="projects-panel">
@@ -150,7 +149,7 @@ export function AppsSection() {
   return (
     <section className="projects projects--apps" aria-label="Apps and extensions" data-reveal>
       <div className="projects__panel">
-        <span className="projects__ext-eyebrow">Your apps label</span>
+        <span className="projects__ext-eyebrow">Apps I built</span>
         <ul className="projects__apps" role="list">
           {mobileApps.map((app) => (
             <AppCard key={app.name} app={app} />
@@ -159,7 +158,7 @@ export function AppsSection() {
 
         {/* Browser extensions - a compact companion block in the same section */}
         <div className="projects__ext">
-          <span className="projects__ext-eyebrow">Your extensions label</span>
+          <span className="projects__ext-eyebrow">Systems behind the apps</span>
           <ul className="ext-grid" role="list">
             {EXTENSIONS.map((ext) => (
               <ExtensionCard key={ext.name} ext={ext} />

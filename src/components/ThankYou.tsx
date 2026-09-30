@@ -109,8 +109,8 @@ export default function ThankYou() {
           <span className="thankyou__eyebrow">Message received</span>
           <h1 className="thankyou__heading">Got it. Talk soon.</h1>
           <p className="thankyou__body">
-            I'll review your message and follow up within 24 hours with next steps and a booking link.
-            Check your inbox - and your spam folder just in case.
+            If you sent a message through your mail app, I will read it and follow up by email.
+            You can also book a discovery call from the main portfolio.
           </p>
 
           <div className="thankyou__countdown" aria-live="polite" aria-atomic="true">

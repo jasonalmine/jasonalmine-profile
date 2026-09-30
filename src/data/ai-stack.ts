@@ -6,7 +6,7 @@
  * render whatever shape they find here, so swapping in content is a data edit
  * and never a JSX edit. Keep the exported names and types stable.
  *
- * Every value below is a PLACEHOLDER. Shape rules:
+ * Shape rules:
  * - The root is you. Its children are the categories (branches).
  * - A branch with `status` is itself a system; a branch without one is a
  *   group whose children are the systems.
@@ -59,85 +59,82 @@ export type StackNode = {
 const ANTHROPIC: StackLogo = { src: '/icons/anthropic.svg', name: 'Anthropic' }
 const OPENAI: StackLogo = { src: '/icons/openai.svg', name: 'OpenAI' }
 const SLACK: StackLogo = { src: '/icons/slack.svg', name: 'Slack' }
-const NOUS: StackLogo = { src: '/icons/nousresearch.svg', name: 'Nous Research' }
-
-const WHAT = 'PLACEHOLDER - tell me what to put here: one plain line on what this does.'
-const STACK = 'PLACEHOLDER - model, tools, where it runs'
+const GHL: StackLogo = { src: '/icons/gohighlevel.png', name: 'GoHighLevel' }
 
 /** Single root: you. Branches are the categories. */
 export const aiStack: StackNode = {
   id: 'root',
   Icon: Sparkle,
   name: profile.name,
-  what: 'PLACEHOLDER - tell me what to put here: one line on the systems you build and run.',
-  stack: 'PLACEHOLDER - your brand',
+  what: 'I build CRM, automation, and reporting systems that service teams can run.',
+  stack: 'Ventryx · Cebu, Philippines',
   children: [
     {
       id: 'project-a',
       Icon: Coffee,
       logos: [ANTHROPIC],
-      name: 'Project A',
-      what: WHAT,
-      stack: STACK,
+      name: 'Speed to Lead',
+      what: 'Routes new enquiries to the right owner and starts follow-up.',
+      stack: 'GoHighLevel · n8n',
       status: 'Live',
     },
     {
       id: 'category-one',
       Icon: Robot,
-      name: 'Category One',
-      what: 'PLACEHOLDER - tell me what to put here: what the systems in this group have in common.',
+      name: 'Client systems',
+      what: 'Apps and CRMs built around an actual operating workflow.',
       children: [
         {
           id: 'project-b',
           Icon: Article,
           logos: [ANTHROPIC],
-          name: 'Project B',
-          what: WHAT,
-          stack: STACK,
-          status: 'Internal',
+          name: 'Email approval app',
+          what: 'Builds property emails, syncs them with the CRM, and records client approval.',
+          stack: 'React · GoHighLevel API',
+          status: 'Live',
         },
         {
           id: 'project-c',
           Icon: FilmSlate,
           logos: [OPENAI],
-          name: 'Project C',
-          what: WHAT,
-          stack: STACK,
-          status: 'Internal',
+          name: 'Sales intelligence',
+          what: 'Shows leads, sales, and campaign ROI across 6 property projects.',
+          stack: 'React · GoHighLevel API',
+          status: 'Live',
         },
         {
           id: 'project-d',
           Icon: UsersThree,
           logos: [ANTHROPIC],
-          name: 'Project D',
-          what: WHAT,
-          stack: STACK,
-          status: 'Internal',
+          name: 'Enrolment CRM',
+          what: 'Tracks training enquiries through enrolment in 1 pipeline.',
+          stack: 'GoHighLevel',
+          status: 'Live',
         },
       ],
     },
     {
       id: 'category-two',
       Icon: Database,
-      name: 'Category Two',
-      what: 'PLACEHOLDER - tell me what to put here: what the systems in this group have in common.',
+      name: 'Operations',
+      what: 'The connections and safeguards behind daily client work.',
       children: [
         {
           id: 'project-e',
           Icon: SlackLogo,
           logos: [ANTHROPIC, SLACK],
-          name: 'Project E',
-          what: WHAT,
-          stack: STACK,
+          name: 'Billing sync',
+          what: 'Turns approved Asana time into deduped Xero invoices.',
+          stack: 'n8n · Asana · Xero',
           status: 'Live',
         },
         {
           id: 'project-f',
           Icon: MagnifyingGlass,
           logos: [ANTHROPIC],
-          name: 'Project F',
-          what: WHAT,
-          stack: STACK,
+          name: 'Lead parsers',
+          what: 'Normalises 8 lead sources into one CRM routing pattern.',
+          stack: 'n8n · GoHighLevel',
           status: 'Live',
         },
       ],
@@ -145,34 +142,34 @@ export const aiStack: StackNode = {
     {
       id: 'category-three',
       Icon: ChatCircleDots,
-      name: 'Category Three',
-      what: 'PLACEHOLDER - tell me what to put here: what the systems in this group have in common.',
+      name: 'Acquisition',
+      what: 'Campaign and funnel systems connected back to the pipeline.',
       children: [
         {
           id: 'project-g',
           Icon: FlowArrow,
           logos: [ANTHROPIC],
-          name: 'Project G',
-          what: WHAT,
-          stack: STACK,
-          status: 'Live',
+          name: 'Meta ads triage',
+          what: 'A demo dashboard that surfaces the 1 ad needing a decision.',
+          stack: 'Next.js · generated demo data',
+          status: 'Internal',
         },
         {
           id: 'project-h',
           Icon: PhoneCall,
           logos: [ANTHROPIC],
-          name: 'Project H',
-          what: WHAT,
-          stack: STACK,
-          status: 'Beta',
+          name: 'Coaching funnels',
+          what: 'Captures and segments enquiries for 7 advisory brands.',
+          stack: 'GoHighLevel funnels',
+          status: 'Live',
         },
         {
           id: 'project-i',
           Icon: Browser,
           logos: [ANTHROPIC],
-          name: 'Project I',
-          what: WHAT,
-          stack: STACK,
+          name: 'Meta media buying',
+          what: 'Tracks leads and cost per result across 4 documented accounts.',
+          stack: 'Meta Ads · GoHighLevel',
           status: 'Live',
         },
       ],
@@ -180,18 +177,18 @@ export const aiStack: StackNode = {
     {
       id: 'project-j',
       Icon: Broadcast,
-      logos: [NOUS],
-      name: 'Project J',
-      what: WHAT,
-      stack: STACK,
+      logos: [GHL],
+      name: 'Automation backbone',
+      what: 'Keeps CRM records and 10 other tools in sync.',
+      stack: 'n8n · GoHighLevel',
       status: 'Live',
       children: [
         {
           id: 'project-k',
           Icon: Timer,
-          name: 'Project K',
-          what: WHAT,
-          stack: STACK,
+          name: 'Self-healing audits',
+          what: 'Checks 5 property pipelines and repairs drift on a schedule.',
+          stack: 'n8n · GoHighLevel',
           status: 'Live',
         },
       ],

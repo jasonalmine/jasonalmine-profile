@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Play, Gauge, Robot, Code } from '@/components/slab'
+import { ArrowUpRight, Gauge, Robot, Code } from '@/components/slab'
 import type { Icon } from '@/components/slab'
 
 /**
@@ -25,6 +25,7 @@ type Clip = {
   index: string
   /** Leave empty until you have the video file. */
   src: string
+  url: string
   poster: string
   duration: string
   kicker: string
@@ -34,22 +35,24 @@ type Clip = {
 
 const CLIPS: Clip[] = [
   {
-    id: 'clip-1',
+    id: 'automation',
     index: '01',
     src: '',
-    poster: '/placeholders/testimonial-1.jpg',
-    duration: '0:00',
-    kicker: 'Client testimonial',
+    url: 'https://www.jasonalmine.com/work#self-healing-automation-backbone',
+    poster: '/work/n8n-drive-sync.webp',
+    duration: 'Case study',
+    kicker: 'Automation backbone',
     width: 720,
     height: 1080,
   },
   {
-    id: 'clip-2',
+    id: 'dashboard',
     index: '02',
     src: '',
-    poster: '/placeholders/testimonial-2.jpg',
-    duration: '0:00',
-    kicker: 'Client testimonial',
+    url: 'https://www.jasonalmine.com/work#sales-marketing-intelligence-dashboard',
+    poster: '/work/app-dash-leads.webp',
+    duration: 'Case study',
+    kicker: 'Sales intelligence',
     width: 720,
     height: 1080,
   },
@@ -71,32 +74,26 @@ type Client = {
 const CLIENTS: Client[] = [
   {
     index: '01',
-    name: 'Client Name 1',
-    role: 'PLACEHOLDER ROLE',
-    daily:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on what you run or build for this client day to day.',
-    work: ['Tag', 'Tag', 'Tag'],
-    logoSrc: '/placeholders/logo.svg',
+    name: 'Property developer',
+    role: 'CRM and operations',
+    daily: 'I built a 90+ workflow n8n suite. 64 are live across 10 integrated platforms and 5 property pipelines.',
+    work: ['n8n', 'GoHighLevel', 'BI'],
     Icon: Gauge,
   },
   {
     index: '02',
-    name: 'Client Name 2',
-    role: 'PLACEHOLDER ROLE',
-    daily:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on what you run or build for this client day to day.',
-    work: ['Tag', 'Tag', 'Tag'],
-    logoSrc: '/placeholders/logo.svg',
+    name: 'Training academy',
+    role: 'Enrolment CRM',
+    daily: 'I built 1 enquiry-to-enrolment pipeline with 179 opportunities tracked and automated stage handoffs.',
+    work: ['GoHighLevel', 'Enrolment', 'Reporting'],
     Icon: Robot,
   },
   {
     index: '03',
-    name: 'Client Name 3',
-    role: 'PLACEHOLDER ROLE',
-    daily:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on what you run or build for this client day to day.',
-    work: ['Tag', 'Tag', 'Tag'],
-    logoSrc: '/placeholders/logo.svg',
+    name: 'Lead-gen advertisers',
+    role: 'Paid media',
+    daily: 'The published account captures show 21,583 leads across 4 Meta accounts, with cost per lead shown by campaign.',
+    work: ['Meta Ads', 'Google Ads', 'Attribution'],
     Icon: Code,
   },
 ]
@@ -118,12 +115,12 @@ export default function TestimonialsGrid() {
   return (
     <section className="pgrid tgrid" aria-labelledby="testimonials-title">
       <header className="pgrid__head">
-        <span className="pgrid__eyebrow">Testimonials</span>
+        <span className="pgrid__eyebrow">Evidence</span>
         <h1 className="pgrid__title" id="testimonials-title">
-          Your testimonials headline.
+          Work you can inspect.
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line that introduces the videos and the client list.
+          Screens from shipped systems, with the scope and measurement window named in each case study.
         </p>
       </header>
 
@@ -150,12 +147,11 @@ export default function TestimonialsGrid() {
               <button
                 type="button"
                 className="tgrid__cover"
-                onClick={() => hasVideo && setPlaying(true)}
-                disabled={!hasVideo}
+                onClick={() => hasVideo ? setPlaying(true) : window.open(clip.url, '_blank', 'noopener,noreferrer')}
                 aria-label={
                   hasVideo
                     ? `Play client testimonial ${clip.index}, ${clip.duration}`
-                    : `Client testimonial ${clip.index}, no video added yet`
+                    : `Open ${clip.kicker} case study`
                 }
               >
                 <img
@@ -168,7 +164,7 @@ export default function TestimonialsGrid() {
                 <span className="tgrid__cover-shade" aria-hidden="true" />
                 {hasVideo && (
                   <span className="tgrid__cover-play" aria-hidden="true">
-                    <Play size={26} weight="fill" />
+                    <ArrowUpRight size={26} weight="bold" />
                   </span>
                 )}
                 <span className="tgrid__cover-meta" aria-hidden="true">
@@ -178,7 +174,7 @@ export default function TestimonialsGrid() {
                   <span className="tgrid__cover-sub">
                     {hasVideo
                       ? `${clip.duration} · Tap to play`
-                      : 'PLACEHOLDER - add your video to public/testimonials/'}
+                      : 'Open the published case study'}
                   </span>
                 </span>
               </button>
@@ -187,7 +183,7 @@ export default function TestimonialsGrid() {
 
           {/* The picker is one segmented control, not two loose chips: two
               cells on a shared plate, the active one lit. */}
-          <div className="tgrid__picker" role="group" aria-label="Choose a testimonial">
+          <div className="tgrid__picker" role="group" aria-label="Choose a case study">
             {CLIPS.map((c, i) => (
               <button
                 key={c.id}
@@ -200,7 +196,7 @@ export default function TestimonialsGrid() {
                   <img src={c.poster} alt="" loading="lazy" decoding="async" />
                 </span>
                 <span className="tgrid__pick-copy">
-                  <span className="tgrid__pick-kicker">Testimonial {c.index}</span>
+                  <span className="tgrid__pick-kicker">Case study {c.index}</span>
                   <span className="tgrid__pick-meta">{c.duration}</span>
                 </span>
               </button>
@@ -211,8 +207,8 @@ export default function TestimonialsGrid() {
         {/* Right: the client ledger, one row per client. */}
         <div className="tgrid__ledger">
           <div className="tgrid__ledger-head">
-            <h2 className="tgrid__ledger-title">Your client list headline here.</h2>
-            <p className="tgrid__ledger-sub">Short supporting line.</p>
+            <h2 className="tgrid__ledger-title">Selected engagements.</h2>
+            <p className="tgrid__ledger-sub">3 examples from the main portfolio.</p>
           </div>
 
           {/* One plate, three rows split by hairlines. Three boxed cards each

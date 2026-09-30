@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { SealCheck, CaretRight, Play, Stack, Coffee } from '@/components/slab'
+import { SealCheck, CaretRight, ArrowUpRight, Stack, AppWindow } from '@/components/slab'
 import { profile } from '@/data/profile'
 import QuickMenu from './QuickMenu'
 
@@ -47,11 +47,11 @@ export function HomeStats() {
 }
 
 const TILES = [
-  { n: '01', label: 'Projects', to: '/projects', title: 'PLACEHOLDER - projects headline', desc: 'Tell me what to put here.', img: '/placeholders/project-1.jpg' },
-  { n: '02', label: 'Services', to: '/services', title: 'PLACEHOLDER - services headline', desc: 'Tell me what to put here.', Icon: Stack },
-  { n: '03', label: 'Showcase', to: '/showcase', title: 'PLACEHOLDER - your flagship', desc: 'Tell me what to put here.', Icon: Coffee, accent: true },
-  { n: '04', label: 'Testimonials', to: '/testimonials', title: 'PLACEHOLDER - testimonials headline', desc: 'Tell me what to put here.', img: '/placeholders/testimonial-1.jpg' },
-  { n: '05', label: 'About', to: '/about', title: `Hi, I'm ${profile.firstName}.`, desc: 'PLACEHOLDER - one line about you.', img: profile.avatarSrc },
+  { n: '01', label: 'Projects', to: '/projects', title: 'Systems I built.', desc: 'CRM, automation, reporting, and funnels.', img: '/work/n8n-drive-sync.webp' },
+  { n: '02', label: 'Services', to: '/services', title: 'What I take on.', desc: 'From first enquiry through follow-up.', Icon: Stack },
+  { n: '03', label: 'Showcase', to: '/showcase', title: 'Inside the build.', desc: 'A closer look at a shipped app.', Icon: AppWindow, accent: true },
+  { n: '04', label: 'Evidence', to: '/testimonials', title: 'What the work shows.', desc: 'Screens and measured outcomes.', img: '/work/app-dash-leads.webp' },
+  { n: '05', label: 'About', to: '/about', title: `Hi, I'm ${profile.firstName}.`, desc: 'Cebu-based. I stay on the build.', img: profile.avatarSrc },
 ] as const
 
 export function HomeExplore() {
@@ -83,20 +83,20 @@ export function HomeExplore() {
       <div className="hsec">
         <h2 className="hsec__title">
           <Link to="/testimonials" className="hsec__link">
-            What clients say
+            Published proof
             <CaretRight size={16} weight="bold" aria-hidden="true" />
           </Link>
         </h2>
       </div>
-      <Link to="/testimonials" className="hproof" aria-label="Client testimonial. PLACEHOLDER - a one-line teaser for your best testimonial.">
+      <Link to="/testimonials" className="hproof" aria-label="View published case-study evidence">
         <span className="hproof__stage">
-          <img src="/placeholders/testimonial-1.jpg" alt="" loading="lazy" />
-          <span className="hproof__play" aria-hidden="true"><Play size={20} weight="fill" /></span>
-          <span className="hproof__dur" aria-hidden="true">0:00</span>
+          <img src="/work/app-dash-leads.webp" alt="" loading="lazy" />
+          <span className="hproof__play" aria-hidden="true"><ArrowUpRight size={20} weight="bold" /></span>
+          <span className="hproof__dur" aria-hidden="true">Case study</span>
         </span>
         <span className="hproof__copy">
-          <span className="hproof__title">PLACEHOLDER - tell me what to put here: a one-line teaser for your best testimonial.</span>
-          <span className="hproof__meta">PLACEHOLDER - client role</span>
+          <span className="hproof__title">1 dashboard across 6 property projects.</span>
+          <span className="hproof__meta">Sales and marketing intelligence</span>
         </span>
       </Link>
     </>

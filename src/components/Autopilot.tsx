@@ -87,7 +87,7 @@ const LINKS: Link[] = [
 ]
 
 export const TOOLS: { Icon: Icon; label: string }[] = [
-  { Icon: Plug,           label: 'Your CRM' },
+  { Icon: Plug,           label: 'GoHighLevel' },
   { Icon: EnvelopeSimple, label: 'Email & SMS' },
   { Icon: Sparkle,        label: 'AI Assistant' },
 ]
@@ -351,11 +351,11 @@ export default function Autopilot({ compact = false, maxScale = 1 }: AutopilotPr
       <header className="autopilot__head">
         <span className="autopilot__eyebrow">Live automation</span>
         <h2 id="autopilot-heading" className="autopilot__headline">
-          Your workflow, end to end.
+          From new lead to next action.
         </h2>
         <p className="autopilot__intro">
-          PLACEHOLDER - tell me what to put here: two or three sentences walking
-          through this example automation, from the trigger to each outcome.
+          An example of how I connect lead capture, routing, reminders, and follow-up.
+          The exact branches depend on the client's pipeline.
         </p>
       </header>
       )}
@@ -372,7 +372,7 @@ export default function Autopilot({ compact = false, maxScale = 1 }: AutopilotPr
 
         <div className="autopilot__canvas">
           <p className="autopilot__caption">
-            Your flow caption, in one short line.
+            An illustrative lead-to-booking workflow.
           </p>
 
           <div className="autopilot__board" aria-hidden="true">

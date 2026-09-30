@@ -13,8 +13,7 @@ import Autopilot, { TOOLS } from '@/components/Autopilot'
  * Projects: the glass, the bento card, plated marks, orange for the index
  * and the accent.
  *
- * Every string below is a PLACEHOLDER. Replace it, or hand this file to your
- * AI assistant and tell it what to put in each spot.
+ * Service copy follows the scope shown in the main portfolio.
  */
 
 /* ---------- The method ---------- */
@@ -30,24 +29,24 @@ type Stage = {
 const STAGES: Stage[] = [
   {
     index: '01',
-    label: 'Step 1',
-    body: 'PLACEHOLDER - one line on what happens in this step.',
+    label: 'Map',
+    body: 'Trace how an enquiry becomes a booked or won job.',
     Icon: MagnetStraight,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3', 'Tag 4'],
+    chips: ['Sources', 'Stages', 'Owners', 'Handoffs'],
   },
   {
     index: '02',
-    label: 'Step 2',
-    body: 'PLACEHOLDER - one line on what happens in this step.',
+    label: 'Build',
+    body: 'Connect the CRM, automations, and reporting.',
     Icon: Timer,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3'],
+    chips: ['GoHighLevel', 'n8n', 'Dashboards'],
   },
   {
     index: '03',
-    label: 'Step 3',
-    body: 'PLACEHOLDER - one line on the result the client gets.',
+    label: 'Operate',
+    body: 'Test with real cases, train the team, and watch failures.',
     Icon: Trophy,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3'],
+    chips: ['QA', 'Handover', 'Support'],
   },
 ]
 
@@ -56,16 +55,14 @@ const STAGES: Stage[] = [
 // Example tool marks from /public/icons. Swap for the tools you actually use.
 const GHL = '/icons/gohighlevel.png'
 const REACT = '/icons/ai/react.svg'
-const TAILWIND = '/icons/ai/tailwindcss.svg'
 const VITE = '/icons/ai/vite.svg'
 const CLOUDFLARE = '/icons/ai/cloudflare.svg'
 const N8N = '/icons/ai/n8n.svg'
 const OPENAI = '/icons/openai.svg'
 const GWS = '/icons/googleworkspace.svg'
 const SLACK = '/icons/slack.svg'
-const CLAUDE_CODE = '/icons/claude-code-logo.png'
-const EXPO = '/icons/ai/expo.svg'
-const CHROME = '/icons/ai/googlechrome.svg'
+const META = '/icons/facebook.svg'
+const CODEX = '/icons/codex.svg'
 
 type Service = {
   index: string
@@ -76,49 +73,46 @@ type Service = {
   bullets: string[]
 }
 
-const BULLETS = ['PLACEHOLDER benefit 1', 'PLACEHOLDER benefit 2', 'PLACEHOLDER benefit 3']
-const SERVICE_DESC = 'PLACEHOLDER - one line on this service.'
-
 const SERVICES: Service[] = [
   {
     index: '01',
-    title: 'Service One',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [GHL, REACT, TAILWIND],
-    bullets: BULLETS,
+    title: 'CRM architecture',
+    description: 'A GoHighLevel setup that matches the way your team sells.',
+    chip: 'GoHighLevel',
+    logos: [GHL, N8N, GWS],
+    bullets: ['Pipelines and ownership', 'Forms and calendars', 'Follow-up and reporting'],
   },
   {
     index: '02',
-    title: 'Service Two',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
+    title: 'Automation',
+    description: 'n8n workflows that keep the CRM and other tools in sync.',
+    chip: 'n8n',
     logos: [GHL, N8N, OPENAI],
-    bullets: BULLETS,
+    bullets: ['Lead routing', 'Data reconciliation', 'Failure alerts'],
   },
   {
     index: '03',
-    title: 'Service Three',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
+    title: 'Lead operations',
+    description: 'A clear path from first response to the next action.',
+    chip: 'CRM + team',
     logos: [GHL, GWS, SLACK],
-    bullets: BULLETS,
+    bullets: ['Speed to lead', 'Owner handoff', 'Nurture and reactivation'],
   },
   {
     index: '04',
-    title: 'Service Four',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
+    title: 'Reporting apps',
+    description: 'Sales and marketing data in one working view.',
+    chip: 'Build + BI',
     logos: [REACT, VITE, CLOUDFLARE],
-    bullets: BULLETS,
+    bullets: ['Pipeline health', 'Campaign ROI', 'Scheduled summaries'],
   },
   {
     index: '05',
-    title: 'Service Five',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [CLAUDE_CODE, EXPO, CHROME],
-    bullets: BULLETS,
+    title: 'Funnels and ads',
+    description: 'Campaigns that feed a CRM you can measure.',
+    chip: 'GHL + paid',
+    logos: [GHL, META, CODEX],
+    bullets: ['Landing pages', 'Meta and Google Ads', 'Offline conversion loop'],
   },
 ]
 
@@ -143,10 +137,10 @@ export default function ServicesGrid() {
       <header className="pgrid__head">
         <span className="pgrid__eyebrow">Services</span>
         <h1 className="pgrid__title" id="services-title">
-          Your services headline, in one short line.
+          The systems behind the follow-through.
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line on what you offer.
+          I build the CRM, automation, reporting, and acquisition paths that service teams use every day.
         </p>
       </header>
 
@@ -155,14 +149,14 @@ export default function ServicesGrid() {
             in order on the right with a signal running them. */}
         <div className="sgrid__method" aria-labelledby="method-title">
           <div className="sgrid__method-copy">
-            <span className="sgrid__method-eyebrow">Your Method</span>
+            <span className="sgrid__method-eyebrow">My method</span>
             <h2 className="sgrid__method-title" id="method-title">
-              One. Two. Three.
+              Map. Build. Run.
               <br />
-              <span>Your method, in three steps.</span>
+              <span>Then keep it working.</span>
             </h2>
             <p className="sgrid__method-sub">
-              PLACEHOLDER - one sentence on why your method works.
+              The system follows the real handoffs, then gets tested against the work your team does.
             </p>
           </div>
 
@@ -191,8 +185,8 @@ export default function ServicesGrid() {
         {/* Five cards, each carrying the marks of what it is built with. */}
         <div className="sgrid__offers">
           <div className="sgrid__offers-head">
-            <h2 className="sgrid__offers-title">Your services, listed.</h2>
-            <p className="sgrid__offers-sub">PLACEHOLDER - one short nudge.</p>
+            <h2 className="sgrid__offers-title">What I build.</h2>
+            <p className="sgrid__offers-sub">Scoped after a discovery call.</p>
           </div>
           <ul className="bento sgrid__services" role="list">
             {SERVICES.map((s) => (
@@ -225,9 +219,9 @@ export default function ServicesGrid() {
           <header className="sgrid__flow-head">
             <div className="sgrid__flow-copy">
               <span className="sgrid__flow-eyebrow">Live automation</span>
-              <h2 className="sgrid__flow-title">Your automation headline.</h2>
+              <h2 className="sgrid__flow-title">A lead moves through the system.</h2>
               <p className="sgrid__flow-sub">
-                PLACEHOLDER - tell me what to put here: one sentence on what this example automation does for a client.
+                This interactive example shows a lead entering the CRM, being routed, followed up, and reported.
               </p>
             </div>
             <ul className="sgrid__flow-tools" role="list" aria-label="Tools that power this flow">

@@ -15,19 +15,13 @@ import { profile } from '@/data/profile'
  */
 
 const N8N = { src: '/icons/ai/n8n.svg', name: 'n8n' }
-const ZAPIER = { src: '/icons/ai/zapier.svg', name: 'Zapier' }
-const DOCKER = { src: '/icons/ai/docker.svg', name: 'Docker' }
+const GHL = { src: '/icons/gohighlevel.png', name: 'GoHighLevel' }
 const CLAUDE = { src: '/icons/ai/claude-color.svg', name: 'Claude' }
 const CODEX = { src: '/icons/ai/codex.svg', name: 'Codex' }
-const GLM = { src: '/icons/ai/zhipu.svg', name: 'GLM' }
-const QWEN = { src: '/icons/ai/qwen.svg', name: 'Qwen' }
-const HERMES = { src: '/icons/ai/hermes.svg', name: 'Hermes' }
-const NAMECHEAP = { src: '/icons/ai/namecheap.svg', name: 'Namecheap' }
-const CLOUDFLARE = { src: '/icons/ai/cloudflare.svg', name: 'Cloudflare' }
 const GITHUB = { src: '/icons/ai/github.svg', name: 'GitHub' }
 const GWS = { src: '/icons/googleworkspace.svg', name: 'Google Workspace' }
 const SLACK = { src: '/icons/ai/slack-color.svg', name: 'Slack' }
-const FIREFLIES = { src: '/icons/ai/fireflies.png', name: 'Fireflies' }
+const META = { src: '/icons/facebook.svg', name: 'Meta' }
 
 type Capability = {
   index: string
@@ -38,23 +32,23 @@ type Capability = {
 const CAPABILITIES: Capability[] = [
   {
     index: '01',
-    title: 'Your role 1',
-    marks: [N8N, ZAPIER, DOCKER],
+    title: 'CRM architecture',
+    marks: [GHL, N8N, SLACK],
   },
   {
     index: '02',
-    title: 'Your role 2',
-    marks: [CLAUDE, CODEX, GLM, QWEN, HERMES],
+    title: 'Automation and AI',
+    marks: [N8N, CLAUDE, CODEX],
   },
   {
     index: '03',
-    title: 'Your role 3',
-    marks: [CLAUDE, CODEX, NAMECHEAP, CLOUDFLARE, GITHUB],
+    title: 'Apps and reporting',
+    marks: [GHL, GWS, GITHUB],
   },
   {
     index: '04',
-    title: 'Your role 4',
-    marks: [GWS, SLACK, FIREFLIES],
+    title: 'Funnels and paid media',
+    marks: [GHL, META, GWS],
   },
 ]
 
@@ -67,24 +61,24 @@ export default function AboutGrid() {
           {`Hi, I’m ${profile.firstName}.`}
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line on what you do.
+          I design, build, and support CRM and automation systems for service businesses.
         </p>
       </header>
 
       <div className="home__glass agrid__glass">
         <div className="agrid__copy">
           <p className="agrid__lead">
-            Your big statement goes here, in one or two lines.
-            <span> A softer second half that finishes the thought.</span>
+            I build what I design.
+            <span> I stay for the handover and the work after it.</span>
           </p>
 
           <p className="agrid__note">
-            <strong>Your company name</strong>, and{' '}
-            <a className="agrid__link" href="#">
-              your product
+            <strong>Ventryx</strong>, and{' '}
+            <a className="agrid__link" href="https://www.jasonalmine.com/work">
+              my published work
             </a>{' '}
-            - PLACEHOLDER - tell me what to put here: two sentences on your company, what
-            you sell or build, and who it is for.
+            show how I connect GoHighLevel, n8n, apps, and reporting. I work from Cebu
+            with service teams that need a system they can use after handover.
           </p>
 
           <ul className="agrid__caps" role="list">
@@ -113,11 +107,11 @@ export default function AboutGrid() {
           <div className="agrid__bar">
             <span className="agrid__cell">
               <span className="agrid__cell-mark agrid__cell-mark--img">
-                <img src="/placeholders/badge.svg" alt="" loading="lazy" decoding="async" />
+                <img src="/icons/ai/n8n.svg" alt="" loading="lazy" decoding="async" />
               </span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Credential name</span>
-                <span className="agrid__cell-meta">Credential ID</span>
+                <span className="agrid__cell-title">90+ workflows built</span>
+                <span className="agrid__cell-meta">64 live across 10 platforms</span>
               </span>
             </span>
 
@@ -127,17 +121,17 @@ export default function AboutGrid() {
               </span>
               <span className="agrid__cell-copy">
                 <span className="agrid__cell-title">{profile.location}</span>
-                <span className="agrid__cell-meta">Timezone · working hours</span>
+                <span className="agrid__cell-meta">Philippine Time</span>
               </span>
             </span>
 
-            <a className="agrid__cell agrid__cell--wide" href="#">
+            <a className="agrid__cell agrid__cell--wide" href="https://www.jasonalmine.com/work">
               <span className="agrid__cell-mark agrid__cell-mark--plain">
-                <img src="/placeholders/logo.svg" alt="" loading="lazy" decoding="async" />
+                <img src="/favicon.svg" alt="" loading="lazy" decoding="async" />
               </span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Community or affiliation</span>
-                <span className="agrid__cell-meta">Your role there</span>
+                <span className="agrid__cell-title">Full portfolio</span>
+                <span className="agrid__cell-meta">Case studies and screenshots</span>
               </span>
               <ArrowUpRight className="agrid__cell-go" size={15} weight="bold" aria-hidden="true" />
             </a>
@@ -146,8 +140,8 @@ export default function AboutGrid() {
 
         <div className="agrid__portrait">
           <img
-            src="/avatar.svg"
-            alt="Portrait placeholder"
+            src="/profile.png"
+            alt="Portrait of Jason Almine"
             loading="eager"
             decoding="async"
             width={400}
